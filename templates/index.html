@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+  </head>
+  
+  <body>
+  <h1>Random Number:{{random}}</h1>
+  <h1>Name:{{name}}</h1>
+  <h1 style="color:#4caf50">Age:{{age}}</h1>
+  <li>
+    {% if age > 18%}
+      <p>you are eligible to vote</p>
+    
+    {% else %}
+      <p>you are not eligible to vote baccha</p>
+      
+    {% endif %}
+
+  </li>
+  <h1>Gender:{{gender}}</h1>
+  <h1>Hobbies: </h1>
+
+  <ul>
+<!--yo vaneko loop lagako hai -->
+    {% for hobby in hobbies%}
+
+    <li>{{hobby}}</li>
+
+
+    {% endfor %}
+    
+  </ul>
+
+   
+  
+    <div
+      style="
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      "
+    >
+      <h2 style="text-align: center; margin-bottom: 20px">Contact Us</h2>
+      <form action="submit_contact.php" method="post">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 100px;
+          "
+        ></textarea>
+        <input
+          type="submit"
+          value="Send"
+          style="
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+          "
+        />
+      </form>
+    </div>
+  </body>
+</html>
